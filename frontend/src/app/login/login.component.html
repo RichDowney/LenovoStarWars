@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Username" formControlName="username" (keypress)="clearErrorMessage()" required>
+                    <!-- With more time would have custom validation besides this hardcoded one. -->
+                    <mat-error *ngIf="submitted && form['username'].errors">Username is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Password" formControlName="password" (keypress)="clearErrorMessage()" required>
+                    <!-- With more time would have custom validation besides this hardcoded one. -->
+                    <mat-error *ngIf="submitted && form['password'].errors">Password is required</mat-error>
+                </mat-form-field>
+            </p>
+            <p *ngIf="loginError" class="error">
+                {{ loginError }}
+            </p>
+            <div class="button">
+                <button type="submit" mat-raised-button>Login</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,10 @@
+<section class="buttonContainer">
+    <button mat-raised-button (click)="getCollection()">Get Collection</button>
+    <button mat-raised-button (click)="logout()">Logout</button>
+</section>
+
+<section class="itemContainer">
+    <div *ngFor="let item of collectionItems">
+        <app-item [item]="item"></app-item>
+    </div>
+</section>

@@ -1,0 +1,6 @@
+<div *ngIf="!loggedIn">
+    <login (onLoginSuccess)="onLoginSuccess()"></login>
+</div>
+<div *ngIf="loggedIn">
+    <collection (onLogoutSuccess)="onLogoutSuccess()"></collection>
+</div>
